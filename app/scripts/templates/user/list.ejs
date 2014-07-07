@@ -1,0 +1,6 @@
+<h2>Users</h2>
+<ul>
+<% for(var i=0; i<users.length; i++) {%>
+   <li><%= users[i].first_name %> <%= users[i].last_name %> <a href="mailto:<%= users[i].email %>"><%= users[i].email %></a></li>
+<% } %>
+</ul>
