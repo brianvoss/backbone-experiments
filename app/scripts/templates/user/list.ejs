@@ -1,4 +1,5 @@
 <h2>Users</h2>
+<a class="btn pull-right" href="#/users/add">Add User</a>
 <ul>
 <% for(var i=0; i<users.length; i++) {%>
    <li><%= users[i].first_name %> <%= users[i].last_name %> <a href="mailto:<%= users[i].email %>"><%= users[i].email %></a></li>

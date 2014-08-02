@@ -14,7 +14,7 @@ define([
 
         template: JST['app/scripts/templates/user/list.ejs'],
 
-        el: '#users',
+        el: '#content',
 
         tagName: 'div',
 

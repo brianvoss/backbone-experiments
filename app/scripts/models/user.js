@@ -7,7 +7,6 @@ define([
     'use strict';
 
     var UserModel = Backbone.Model.extend({
-        url: '',
 
         initialize: function() {
             console.log('user model initialize');
@@ -18,6 +17,10 @@ define([
             last_name: '',
             email: '',
             password_hash: ''
+        },
+
+        url: function() {
+
         },
 
         validate: function(attrs, options) {

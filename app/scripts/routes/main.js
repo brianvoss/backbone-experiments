@@ -4,8 +4,8 @@ define([
   'underscore',
   'backbone',
   'app',
-  'views/user/list'
-], function($, _, Backbone, App, UserListView){
+  'views/home'
+], function($, _, Backbone, App, HomeView){
 
   var AppRouter = Backbone.Router.extend({
 
@@ -14,7 +14,8 @@ define([
     },
 
     defaultAction: function(actions){
-      console.log('default route: ' + actions);
+      var homeView = new HomeView();
+      homeView.render();
     }
 
   });

@@ -3,13 +3,16 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'views/user/list'
-], function($, _, Backbone, UserListView){
+  'views/home',
+  'views/user/list',
+  'views/user/add',
+  'views/user/edit'
+], function($, _, Backbone, HomeView, UserListView, UserAddView, UserEditView){
 
   var UserRouter = Backbone.Router.extend({
 
     routes: {
-      'user(/:action)(/:id)': 'userDispatch',
+      'users(/:action)(/:id)': 'userDispatch',
       '*actions': 'defaultAction'
     },
 
@@ -34,11 +37,13 @@ define([
     },
 
     addUser: function() {
-
+      var view = new UserAddView();
+      view.render();
     },
-
+    
     editUser: function(id) {
-
+      var view = new UserEditView();
+      view.render();
     },
 
     deleteUser: function(id) {
@@ -52,6 +57,8 @@ define([
 
     defaultAction: function(actions){
       console.log('user router default: ' + actions);
+      var view = new HomeView();
+      view.render();
     }
 
   });
