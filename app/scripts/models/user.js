@@ -8,15 +8,18 @@ define([
 
     var UserModel = Backbone.Model.extend({
 
+        urlRoot: '/contacts',
+
         initialize: function() {
             console.log('user model initialize');
         },
 
         defaults: {
-            first_name: '',
-            last_name: '',
-            email: '',
-            password_hash: ''
+            firstname   : '',
+            lastname    : '',
+            email       : '',
+            phone       : '',
+            favorite    : "0"
         },
 
         url: function() {
@@ -24,6 +27,7 @@ define([
         },
 
         validate: function(attrs, options) {
+        
         },
 
         parse: function(response, options)  {

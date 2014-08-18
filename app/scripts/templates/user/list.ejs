@@ -1,7 +1,28 @@
 <h2>Users</h2>
-<a class="btn pull-right" href="#/users/add">Add User</a>
-<ul>
+<a class="btn btn-primary pull-right" href="#/users/add">Add User</a>
+<br />&nbsp;<br />
+<br />&nbsp;<br />
+<table class="user-list table-striped">
+<thead>
+    <tr>
+        <th>First</th>
+        <th>Last</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Favorite</th>
+    </tr>
+</thead>
+<tbody>
 <% for(var i=0; i<users.length; i++) {%>
-   <li><%= users[i].first_name %> <%= users[i].last_name %> <a href="mailto:<%= users[i].email %>"><%= users[i].email %></a></li>
+    <tr>
+        <td><%= users[i].firstname %></td>
+        <td><%= users[i].lastname %></td>
+        <td><%= users[i].email %></td>
+        <td><%= users[i].phone %></td>
+        <td>
+            <a data-user="<%= users[i].id %>" class="favorite btn btn-<%= (users[i].favorite == "0") ? 'danger' : 'success' %>"></a>
+        </td>
+    </tr>
 <% } %>
-</ul>
+</tbody>
+</table>

@@ -30,31 +30,20 @@ define([
         },
 
         render: function () {
-            this.collection.add([
-                {
-                    id: null,
-                    first_name: 'Brian',
-                    last_name: 'Voss',
-                    email: 'brian@brianvoss.com',
-                    password_hash: ''
+            var that = this;
+            this.collection.fetch({
+
+                dataType: 'json',
+                /**
+                 *
+                 */
+                success: function(collection, response, options){
+                    that.$el.html(that.template({users: collection.toJSON()}));
                 },
-                {
-                    id: null,
-                    first_name: 'Rendon',
-                    last_name: 'Barthalow',
-                    email: 'rbar@gmail.com',
-                    password_hash: ''
-                },
-                {
-                    id: null,
-                    first_name: 'Terry',
-                    last_name: 'Moss',
-                    email: 'tmoss@gmail.com',
-                    password_hash: ''
+                error: function(collection, response, options){
+                    //that.$el.html(that.template({users: collection.toJSON()}));
                 }
-            ]);
-            
-            this.$el.html(this.template({users: this.collection.toJSON()}));
+            });
         }
     });
 

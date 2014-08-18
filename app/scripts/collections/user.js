@@ -8,7 +8,8 @@ define([
     'use strict';
 
     var UserCollection = Backbone.Collection.extend({
-        model: UserModel
+        model: UserModel,
+        url: '/users/manage'
     });
 
     return UserCollection;

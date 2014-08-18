@@ -23,7 +23,8 @@ define([
         className: '',
 
         events: {
-            'submit #add-user-form':'addUserFormSubmit'
+            'submit #add-user-form':'addUserFormSubmit',
+            'click input.cancel':'cancelAddUser'
         },
 
         initialize: function() {
@@ -40,8 +41,19 @@ define([
         addUserFormSubmit: function(event){
             var form = event.target,
                 form_data = FormHelper.serialize(form);
-            console.dir(form_data);
+            var user = new UserModel();
+            user.save(form_data, {
+                success: function(user){
+                    console.dir(user);
+                }
+            });
             return false;
+        },
+        /**
+         * 
+         */
+        cancelAddUser: function(event){
+            router.navigate('/users', {trigger: true})
         }
     });
 
