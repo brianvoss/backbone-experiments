@@ -34,8 +34,7 @@ module.exports = function (grunt) {
             },
             compass: {
                 files: ['<%= yeoman.app %>/styles/**/*.{scss,sass}'],
-                tasks: ['compass'],
-                importPath: 'app/components'
+                tasks: ['compass']
             },
             livereload: {
                 options: {
