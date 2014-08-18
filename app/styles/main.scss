@@ -20,6 +20,10 @@ body {
     width: 300px;
 }
 
+table {
+    width:100%;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -72,13 +76,10 @@ body {
     margin-top: 28px;
 }
 
-label {
+label,
+input[type=text],
+input[type=email] {
     display: block;
-}
-
-input {
-    left: 150px;
-    display: relative;
 }
 
 /* Responsive: Portrait tablets and up */
