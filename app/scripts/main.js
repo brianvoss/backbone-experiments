@@ -17,8 +17,19 @@ require.config({
 });
 
 require([
-    'app'
-], function (Application) {
+    'app',
+    'jquery'
+], function (Application, $) {
+
+    jQuery.ajaxSetup({
+        accepts: {
+            json: 'application/json'
+        }
+    });
+
+    $.ajaxPrefilter(function(options, originalOptions, jqXHR){
+        options.url = 'http://localhost:8000' + options.url;
+    });
 
     // Create Global Namespace
     window.App = {

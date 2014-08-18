@@ -16,7 +16,11 @@ define([
     UserRouter.initialize();
 
     Backbone.history.start();
+
   };
+  
+  $.support.cors = true;
+  //Backbone.emulateHTTP = true;
 
   return {
     initialize: initialize
