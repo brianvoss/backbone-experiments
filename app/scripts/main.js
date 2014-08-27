@@ -27,7 +27,7 @@ require([
         }
     });
 
-    $.ajaxPrefilter(function(options, originalOptions, jqXHR){
+    $.ajaxPrefilter(function(options){
         options.url = 'http://localhost:8000' + options.url;
     });
 

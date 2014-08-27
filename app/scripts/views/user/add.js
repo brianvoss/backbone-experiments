@@ -52,8 +52,8 @@ define([
         /**
          * 
          */
-        cancelAddUser: function(event){
-            router.navigate('/users', {trigger: true})
+        cancelAddUser: function(/*event*/){
+            //router.navigate('/users', {trigger: true});
         }
     });
 

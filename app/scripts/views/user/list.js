@@ -5,9 +5,8 @@ define([
     'underscore',
     'backbone',
     'templates',
-    'collections/user',
-    'models/user'
-], function ($, _, Backbone, JST, UserCollection, UserModel) {
+    'collections/user'
+], function ($, _, Backbone, JST, UserCollection) {
     'use strict';
 
     var UserView = Backbone.View.extend({
@@ -37,10 +36,10 @@ define([
                 /**
                  *
                  */
-                success: function(collection, response, options){
+                success: function(collection/*, response, options*/){
                     that.$el.html(that.template({users: collection.toJSON()}));
                 },
-                error: function(collection, response, options){
+                error: function(/**collection, response, options**/){
                     //that.$el.html(that.template({users: collection.toJSON()}));
                 }
             });

@@ -19,18 +19,18 @@ define([
             lastname    : '',
             email       : '',
             phone       : '',
-            favorite    : "0"
+            favorite    : '0'
         },
 
         url: function() {
 
         },
 
-        validate: function(attrs, options) {
+        validate: function( /**attrs, options**/ ) {
         
         },
 
-        parse: function(response, options)  {
+        parse: function( response /**, options**/)  {
             return response;
         }
     });
